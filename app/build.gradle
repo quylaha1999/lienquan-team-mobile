@@ -74,6 +74,8 @@ dependencies {
     implementation deps.glide.glide
     kapt deps.glide.complier
 
+    implementation deps.picasso.picasso
+
     implementation deps.multidex.multidex
 
     implementation deps.firebase.firestore
@@ -81,6 +83,15 @@ dependencies {
     testImplementation deps.support.junit
     androidTestImplementation deps.support.runner
     androidTestImplementation deps.support.espresso_core
+
+    androidTestImplementation(deps.arch_core.testing, {})
+    testImplementation deps.mockito.core
+    testImplementation deps.mockito.inline
+    testImplementation(deps.arch_core.testing, {
+        exclude group: 'com.android.support', module: 'support-compat'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-core-utils'
+    })
 }
 
 apply plugin: "androidx.navigation.safeargs.kotlin"
