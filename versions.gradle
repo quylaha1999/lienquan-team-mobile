@@ -39,6 +39,9 @@ versions.retrofit = "2.6.2"
 // glide
 versions.glide = "4.10.0"
 
+// picasso
+versions.picasso = "2.71828"
+
 // google service
 versions.google_services = "4.3.2"
 
@@ -46,6 +49,12 @@ versions.multidex = "2.0.1"
 
 // firebase firestore
 versions.firebase_firestore = "21.1.1"
+
+// tesing
+
+versions.mockito = "2.7.19"
+versions.mockito_all = "1.10.19"
+versions.mockito_inline = "2.13.0"
 
 def deps = [:]
 
@@ -117,6 +126,10 @@ glide.glide = "com.github.bumptech.glide:glide:$versions.glide"
 glide.complier = "com.github.bumptech.glide:compiler:$versions.glide"
 deps.glide = glide
 
+def picasso = [:]
+picasso.picasso = "com.squareup.picasso:picasso:$versions.picasso"
+deps.picasso = picasso
+
 def multidex = [:]
 multidex.multidex = "androidx.multidex:multidex:$versions.multidex"
 deps.multidex = multidex
@@ -128,6 +141,16 @@ deps.google = google
 def firebase = [:]
 firebase.firestore = "com.google.firebase:firebase-firestore:$versions.firebase_firestore"
 deps.firebase = firebase
+
+def arch_core = [:]
+arch_core.testing = 'androidx.arch.core:core-testing:2.0.0'
+deps.arch_core = arch_core
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
+mockito.inline = "org.mockito:mockito-inline:$versions.mockito_inline"
+deps.mockito = mockito
 
 ext.deps = deps
 
