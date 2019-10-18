@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "315449064077",
+    "firebase_url": "https://lien-quan-hackathon.firebaseio.com",
+    "project_id": "lien-quan-hackathon",
+    "storage_bucket": "lien-quan-hackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315449064077:android:2db3aa8e4ca2ac773300c4",
+        "android_client_info": {
+          "package_name": "com.hackathon.lienquan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315449064077-5ribbst57b16uu1e1ri3emoiels4p6ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVDH60ShMe8F00Ia5zLXkavRod0wnzSxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315449064077-5ribbst57b16uu1e1ri3emoiels4p6ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
