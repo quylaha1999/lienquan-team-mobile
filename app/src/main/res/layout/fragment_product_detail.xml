@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.hackathon.lienquan.ui.screen.products.productDetail.ProductDetailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_light"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_back_white_24"
+                app:titleMarginStart="@dimen/dp_16"
+                app:titleTextColor="@android:color/white"
+                tools:title="Danh sách sản phẩm" />
+
+            <ImageView
+                android:id="@+id/img_product"
+                android:layout_width="0dp"
+                glideUrl="@{viewModel.product.img}"
+                android:layout_height="@dimen/dp_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_16"
+                android:src="@drawable/ic_arrow_back_black_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/btn_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_16"
+                android:src="@drawable/ic_shopping_cart_black_24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:text="@{viewModel.product.title}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/txt_description"
+                app:layout_constraintEnd_toStartOf="@id/img_sale"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_product"
+                tools:text="Name" />
+
+            <ImageView
+                android:id="@+id/img_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_8"
+                android:src="@drawable/ic_sale"
+                android:visibility="@{viewModel.product.sale == 0 ? View.GONE : View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="@id/txt_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txt_title"
+                app:layout_constraintTop_toTopOf="@id/txt_title" />
+
+            <TextView
+                android:id="@+id/txt_title_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="Giá: "
+                app:layout_constraintStart_toStartOf="@id/txt_title"
+                app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.product.convertPrice()}"
+                app:layout_constraintBottom_toBottomOf="@id/txt_title_price"
+                app:layout_constraintStart_toEndOf="@id/txt_title_price"
+                tools:text="10.000 vnd" />
+
+            <TextView
+                android:id="@+id/txt_title_create_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="Ngày nhập: "
+                app:layout_constraintStart_toStartOf="@id/txt_title"
+                app:layout_constraintTop_toBottomOf="@id/txt_title_price" />
+
+            <TextView
+                android:id="@+id/txt_create_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.product.convertDate}"
+                app:layout_constraintBottom_toBottomOf="@id/txt_title_create_date"
+                app:layout_constraintStart_toEndOf="@id/txt_title_create_date"
+                tools:text="19/10/2019" />
+
+            <TextView
+                android:id="@+id/txt_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_8"
+                android:text="@{viewModel.product.des}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/txt_title"
+                app:layout_constraintTop_toBottomOf="@id/txt_title_create_date"
+                tools:text="This is description for product This is description for product This is description for product This is description for product " />
+
+            <TextView
+                android:id="@+id/txt_title_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="Đánh giá"
+                app:layout_constraintStart_toStartOf="@id/txt_title"
+                app:layout_constraintTop_toBottomOf="@id/txt_description" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="wrap_content"
+                android:rating="@{viewModel.product.rate}"
+                app:layout_constraintStart_toStartOf="@id/txt_title"
+                app:layout_constraintTop_toBottomOf="@id/txt_title_rate" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                app:layout_constraintBottom_toBottomOf="@id/rating"
+                app:layout_constraintStart_toStartOf="@id/rating"
+                app:layout_constraintTop_toBottomOf="@id/rating" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btn_buy_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:background="@drawable/bg_round_buy_now"
+            android:text="Mua ngay"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+</layout>

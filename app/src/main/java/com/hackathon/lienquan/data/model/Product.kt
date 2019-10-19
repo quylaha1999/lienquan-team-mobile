@@ -1,9 +1,15 @@
 package com.hackathon.lienquan.data.model
 
+import android.os.Build
 import android.os.Parcelable
+import androidx.annotation.RequiresApi
 import com.google.gson.annotations.SerializedName
+import com.hackathon.lienquan.utils.convertToDateOnly
 import kotlinx.android.parcel.Parcelize
 import java.text.NumberFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 @Parcelize
@@ -23,12 +29,16 @@ data class Product(
     @SerializedName("createDate")
     val createDate: String? = null,
     @SerializedName("rate")
-    val rate: String? = null,
+    val rate: Float? = null,
     @SerializedName("categoryId")
     val categoryId: String? = null
 ) : Parcelable {
     fun convertPrice(): String? {
-        return  NumberFormat.getNumberInstance(Locale.GERMAN).format(price) + "vnđ"
+        return NumberFormat.getNumberInstance(Locale.GERMAN).format(price) + " vnđ"
+    }
+
+    fun convertDate(): String? {
+        return createDate?.let { convertToDateOnly(it) }
     }
 
 }
