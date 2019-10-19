@@ -12,9 +12,12 @@ val databaseModule = module {
     single<FirestoreHelper> { FirestoreHelperImpl() }
     single { createDatabase(get()) }
     single { createDataDao(get()) }
+    single { createDProductDao(get()) }
 }
 
 fun createDatabase(context: Context): AppDatabase =
     Room.databaseBuilder(context, AppDatabase::class.java, Constants.DATABASE_NAME).build()
 
 fun createDataDao(database: AppDatabase) = database.dataDao()
+
+fun createDProductDao(database: AppDatabase) = database.productDao()

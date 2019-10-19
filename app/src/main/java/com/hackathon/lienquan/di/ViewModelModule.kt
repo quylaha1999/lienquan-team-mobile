@@ -14,7 +14,7 @@ val viewModelModule = module {
     viewModel { ProductsViewModel(get(), get()) }
     viewModel { HomeViewModel(get(), get()) }
     viewModel { SearchViewModel(get(), get()) }
-    viewModel { ProductDetailViewModel() }
-    viewModel { CartViewModel() }
+    viewModel { ProductDetailViewModel(get(), get()) }
+    viewModel { CartViewModel(get(), get()) }
 
 }

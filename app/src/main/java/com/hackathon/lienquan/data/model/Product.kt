@@ -3,6 +3,9 @@ package com.hackathon.lienquan.data.model
 import android.os.Build
 import android.os.Parcelable
 import androidx.annotation.RequiresApi
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.hackathon.lienquan.utils.convertToDateOnly
 import kotlinx.android.parcel.Parcelize
@@ -12,8 +15,11 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
 
+@Entity(tableName = "product")
 @Parcelize
 data class Product(
+    @PrimaryKey
+    @ColumnInfo(name = "id")
     @SerializedName("id")
     val id: String,
     @SerializedName("title")

@@ -38,6 +38,7 @@ class ProductDetailFragment : BaseFragment<FragmentProductDetailBinding, Product
         }
 
         btn_buy_now.setOnClickListener {
+            product?.let { it1 -> viewModel.addProduct(it1) }
             AlertDialog.Builder(context)
                 .setMessage("Sản phẩm đã được thêm vào giỏ hàng")
                 .setPositiveButton(
