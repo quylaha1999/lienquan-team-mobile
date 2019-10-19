@@ -1,5 +1,6 @@
 package com.hackathon.lienquan.di
 
+import com.hackathon.lienquan.ui.screen.cart.CartViewModel
 import com.hackathon.lienquan.ui.screen.home.HomeViewModel
 import com.hackathon.lienquan.ui.screen.main.MainViewModel
 import com.hackathon.lienquan.ui.screen.products.ProductsViewModel
@@ -14,5 +15,6 @@ val viewModelModule = module {
     viewModel { HomeViewModel(get(), get()) }
     viewModel { SearchViewModel(get(), get()) }
     viewModel { ProductDetailViewModel() }
+    viewModel { CartViewModel() }
 
 }

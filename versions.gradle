@@ -55,6 +55,7 @@ versions.firebase_firestore = "21.1.1"
 versions.mockito = "2.7.19"
 versions.mockito_all = "1.10.19"
 versions.mockito_inline = "2.13.0"
+versions.number = "1.0.2"
 
 def deps = [:]
 
@@ -151,6 +152,10 @@ mockito.core = "org.mockito:mockito-core:$versions.mockito"
 mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
 mockito.inline = "org.mockito:mockito-inline:$versions.mockito_inline"
 deps.mockito = mockito
+
+def count = [:]
+count.number = "com.cepheuen.elegant-number-button:lib:$versions.number"
+deps.count = count
 
 ext.deps = deps
 
