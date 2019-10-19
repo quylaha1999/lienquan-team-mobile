@@ -22,8 +22,10 @@ class HomeAdapter(val itemClickListener: (Category) -> Unit = {}) :
 
     override fun bindFirstTime(binding: ItemRecyclerCategoryBinding) {
         binding.apply {
-            item?.apply {
-                itemClickListener(this)
+            root.setOnClickListener {
+                item?.apply {
+                    itemClickListener(this)
+                }
             }
         }
     }

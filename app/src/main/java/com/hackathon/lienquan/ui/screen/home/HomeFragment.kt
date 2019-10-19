@@ -2,8 +2,10 @@ package com.hackathon.lienquan.ui.screen.home
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.hackathon.lienquan.R
+import com.hackathon.lienquan.data.Category
 import com.hackathon.lienquan.databinding.FragmentHomeBinding
 import com.hackathon.lienquan.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -25,11 +27,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     fun handleData() {
-        val adapter = HomeAdapter()
+        val adapter = HomeAdapter(itemClickListener = { toProductActivity(it) })
         viewModel.categories.observe(this, Observer {
             adapter.submitList(it)
             progress_loading.visibility = View.GONE
         })
         recycler_category.adapter = adapter
+    }
+
+    fun toProductActivity(category: Category) {
+        Toast.makeText(context, category.id.toString(), Toast.LENGTH_SHORT).show()
     }
 }
