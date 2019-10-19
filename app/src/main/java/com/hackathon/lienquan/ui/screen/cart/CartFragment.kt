@@ -2,6 +2,7 @@ package com.hackathon.lienquan.ui.screen.cart
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import com.hackathon.lienquan.R
 import com.hackathon.lienquan.data.model.Product
 import com.hackathon.lienquan.databinding.FragmentCartBinding
@@ -18,14 +19,12 @@ class CartFragment : BaseFragment<FragmentCartBinding, CartViewModel>() {
         super.onViewCreated(view, savedInstanceState)
 
         recycler_view_cart.adapter = adapter
-
-        val listCart = mutableListOf<Product>(
-            Product("1", "Thit ga","" ,"as" ,100100 ,0,"2019-10-19" ,5f ,"asd2332"),
-            Product("1", "Thit cho","" ,"assd" ,120000 ,0,"2019-10-19" ,5f ,"asd2332"),
-            Product("1", "Thit trau","" ,"fas" ,130000 ,0,"2019-10-19" ,5f ,"asd2332")
-        )
-        adapter.submitList(listCart)
-
+        viewModel.apply {
+            products.observe(viewLifecycleOwner, Observer {
+                adapter.submitList(it)
+            })
+            getProduct()
+        }
         toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
     }
 

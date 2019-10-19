@@ -64,6 +64,7 @@
             android:id="@+id/btn_count"
             android:layout_width="@dimen/dp_100"
             android:layout_height="@dimen/dp_30"
+            app:initialNumber="1"
             app:backGroundColor="#218026"
             android:layout_marginTop="@dimen/dp_8"
             app:layout_constraintStart_toStartOf="@id/txt_title"
