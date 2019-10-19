@@ -37,6 +37,7 @@
             <ImageView
                 android:id="@+id/img_product"
                 android:layout_width="0dp"
+                android:scaleType="centerCrop"
                 glideUrl="@{viewModel.product.img}"
                 android:layout_height="@dimen/dp_200"
                 app:layout_constraintEnd_toEndOf="parent"
