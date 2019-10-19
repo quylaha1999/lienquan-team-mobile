@@ -20,6 +20,7 @@ import com.hackathon.lienquan.BuildConfig
 import com.hackathon.lienquan.data.Constants
 import java.io.File
 
+
 @BindingAdapter("onRefreshListener")
 fun SwipeRefreshLayout.customRefreshListener(listener: SwipeRefreshLayout.OnRefreshListener?) {
     if (listener != null) setOnRefreshListener(listener)
@@ -38,7 +39,7 @@ fun RecyclerView.customScrollListener(listener: RecyclerView.OnScrollListener?) 
 @BindingAdapter("glideUrl")
 fun setImage(imageView: ImageView, url: String?) {
     Glide.with(imageView.context)
-        .load("https://lienquan-hackathon.herokuapp.com/" + url)
+        .load(url)
         .into(imageView)
 }
 

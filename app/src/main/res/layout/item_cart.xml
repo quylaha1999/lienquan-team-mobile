@@ -16,6 +16,8 @@
 
         <ImageView
             android:id="@+id/img_product"
+            glideUrl="@{item.img}"
+            android:scaleType="centerCrop"
             android:layout_width="@dimen/dp_100"
             android:layout_height="@dimen/dp_100"
             android:layout_margin="@dimen/dp_8"
@@ -25,10 +27,10 @@
         <TextView
             android:id="@+id/txt_title"
             android:layout_width="0dp"
-            android:text="@{item.title}"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_8"
             android:layout_marginEnd="@dimen/dp_8"
+            android:text="@{item.title}"
             app:layout_constraintEnd_toStartOf="@id/btn_close"
             app:layout_constraintStart_toEndOf="@id/img_product"
             app:layout_constraintTop_toTopOf="@id/btn_close"
@@ -49,24 +51,24 @@
         <TextView
             android:id="@+id/txt_price"
             android:layout_width="0dp"
-            android:text="@{item.convertPrice()}"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_8"
             android:layout_marginEnd="@dimen/dp_16"
             android:layout_marginRight="@dimen/dp_16"
-            tools:text="asdasdasdasd"
+            android:text="@{item.convertPrice()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/txt_title"
-            app:layout_constraintTop_toBottomOf="@id/txt_title" />
+            app:layout_constraintTop_toBottomOf="@id/txt_title"
+            tools:text="asdasdasdasd" />
 
 
         <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
             android:id="@+id/btn_count"
             android:layout_width="@dimen/dp_100"
             android:layout_height="@dimen/dp_30"
-            app:initialNumber="1"
-            app:backGroundColor="#218026"
             android:layout_marginTop="@dimen/dp_8"
+            app:backGroundColor="#218026"
+            app:initialNumber="1"
             app:layout_constraintStart_toStartOf="@id/txt_title"
             app:layout_constraintTop_toBottomOf="@id/txt_price" />
     </androidx.constraintlayout.widget.ConstraintLayout>
