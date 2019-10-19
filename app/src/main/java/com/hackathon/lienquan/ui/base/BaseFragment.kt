@@ -145,6 +145,17 @@ abstract class BaseFragment<ViewBinding : ViewDataBinding, ViewModel : BaseViewM
             }
     }
 
+    fun replaceFragmentInSearch(
+        fragment: Fragment, TAG: String?, addToBackStack: Boolean = false,
+        transit: Int = -1
+    ) {
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(R.id.container_search, fragment, TAG)
+            ?.apply {
+                commitTransaction(this, addToBackStack, transit)
+            }
+    }
+
     fun replaceChildFragment(
         parentFragment: Fragment = this, containerViewId: Int,
         fragment: Fragment, TAG: String?, addToBackStack: Boolean = false, transit: Int = -1
