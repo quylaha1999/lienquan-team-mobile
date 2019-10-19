@@ -39,6 +39,16 @@ abstract class BaseActivity<ViewBinding : ViewDataBinding, ViewModel : BaseViewM
         }
     }
 
+    fun addFragmentInSearch(
+        fragment: Fragment, TAG: String?, addToBackStack: Boolean = false,
+        transit: Int = -1
+    ) {
+        supportFragmentManager.beginTransaction().add(R.id.container_search, fragment, TAG).apply {
+            commitTransaction(this, addToBackStack, transit)
+        }
+    }
+
+
     fun replaceFragment(
         fragment: Fragment, TAG: String?, addToBackStack: Boolean = false,
         transit: Int = -1
