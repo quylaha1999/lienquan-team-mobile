@@ -11,4 +11,7 @@ interface ApiService {
 
     @GET("product")
     fun getProductsByIdCategory(@Query("categoryId") categoryId: String?): Single<ProductsResponse>
+
+    @GET("product")
+    fun getSearchProduct(@Query("q") query: String): Single<SearchProductResponse>
 }

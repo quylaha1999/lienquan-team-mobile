@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.view.View
 import android.webkit.WebView
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -114,4 +115,9 @@ fun WebView.loadWebUrl(url: String?) {
 fun View?.customBackground(color: Int?) {
     if (this == null || color == null) return
     setBackgroundColor(color)
+}
+
+@BindingAdapter("onEditorActionListener")
+fun TextView.onEditorAction(listener: TextView.OnEditorActionListener) {
+    setOnEditorActionListener(listener)
 }
