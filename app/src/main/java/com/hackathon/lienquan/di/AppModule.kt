@@ -4,5 +4,6 @@ val appModule = listOf(
     databaseModule,
     repositoryModule,
     rxModule,
-    viewModelModule
+    viewModelModule,
+    networkModule
 )
