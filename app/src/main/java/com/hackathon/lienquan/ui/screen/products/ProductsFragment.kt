@@ -9,6 +9,7 @@ import com.hackathon.lienquan.data.Category
 import com.hackathon.lienquan.data.model.Product
 import com.hackathon.lienquan.databinding.FragmentProductsBinding
 import com.hackathon.lienquan.ui.base.BaseFragment
+import com.hackathon.lienquan.ui.screen.products.productDetail.ProductDetailFragment
 import kotlinx.android.synthetic.main.fragment_products.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -50,7 +51,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding, ProductsViewModel
     }
 
 
-    private fun goToDetail(product: Product?) {
-
+    private fun goToDetail(product: Product) {
+        replaceFragment(ProductDetailFragment.newInstance(product), ProductDetailFragment.TAG, true)
     }
 }
