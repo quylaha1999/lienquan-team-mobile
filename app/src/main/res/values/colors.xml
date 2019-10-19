@@ -6,4 +6,5 @@
 
     <color name="color_transparent_40">#66000000</color>
     <color name="color_transparent_48">#7A000000</color>
+    <color name="color_gray_600">#757575</color>
 </resources>
