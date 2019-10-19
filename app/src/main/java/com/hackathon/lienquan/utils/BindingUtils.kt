@@ -1,6 +1,5 @@
 package com.hackathon.lienquan.utils
 
-import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.SystemClock
@@ -8,7 +7,6 @@ import android.text.TextUtils
 import android.view.View
 import android.webkit.WebView
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -39,7 +37,7 @@ fun RecyclerView.customScrollListener(listener: RecyclerView.OnScrollListener?) 
 @BindingAdapter("glideUrl")
 fun setImage(imageView: ImageView, url: String?) {
     Glide.with(imageView.context)
-        .load(url)
+        .load("https://lienquan-hackathon.herokuapp.com/" + url)
         .into(imageView)
 }
 
@@ -110,18 +108,6 @@ fun WebView.loadWebUrl(url: String?) {
     url?.apply {
         loadUrl(url)
     }
-}
-
-@BindingAdapter("backgroundTint")
-fun TextView?.customBackgroundTint(color: Int?) {
-    if (this == null || color == null) return
-    background?.setTint(color)
-}
-
-@BindingAdapter("tint")
-fun ImageView?.customTint(color: Int?) {
-    if (this == null || color == null) return
-    imageTintList = ColorStateList.valueOf(color)
 }
 
 @BindingAdapter("background")
