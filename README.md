@@ -1,4 +1,9 @@
 # Lien Quan TEAM - Hackthon SUN* 2019
+
+## Mô tả chung
+- Ứng dụng AgriMarket cho phép người dùng xem các danh mục sản phẩm và các sản phẩm tương ứng với danh mục với các thông tin chi cơ bản về sản phẩm như hình ảnh, giá cả, đánh giá, mô tả. Từ đó người dùng có thể đặt sản phẩm, thêm vào giỏ hàng, thanh toán và chọn phương thức vận chuyển.
+- Ứng dụng được thiết kế bắt mắt, hình ảnh về sản phẩm sắc nét, chân thực, thông tin mô tả đầy đủ về sản phẩm. Cung c
+
 ## Kiến trúc ứng dụng
 ![Android Architecture](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
 
